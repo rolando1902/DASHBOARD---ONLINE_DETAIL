@@ -122,6 +122,7 @@ df_clientes = df_raw.groupby(["Country", "MonthNumber", "CustomerID"])["Total"].
 
 # Inicializar Dash
 app = Dash(__name__)
+server = app.server
 
 app.layout = html.Div(style={'fontFamily': 'Arial, sans-serif', 'backgroundColor': '#f8f9fa', 'padding': '20px'}, children=[
     html.Div([
