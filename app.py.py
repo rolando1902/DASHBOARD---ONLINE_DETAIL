@@ -97,8 +97,8 @@ def generar_reportes_locales(df):
 # ==========================================
 
 # Ejecutar proceso inicial si no existe el archivo limpio
-#if not os.path.exists(archivo_limpio):
- #   backend()
+if not os.path.exists(archivo_limpio):
+   backend()
 
 # Carga optimizada para el Dashboard
 df_raw = pd.read_csv(archivo_limpio)
@@ -122,7 +122,6 @@ df_clientes = df_raw.groupby(["Country", "MonthNumber", "CustomerID"])["Total"].
 
 # Inicializar Dash
 app = Dash(__name__)
-server = app.server
 
 app.layout = html.Div(style={'fontFamily': 'Arial, sans-serif', 'backgroundColor': '#f8f9fa', 'padding': '20px'}, children=[
     html.Div([
@@ -221,4 +220,7 @@ def actualizar_dashboard(pais_seleccionado, rango_meses):
     return fig1, fig2, fig3, fig4
 
 if __name__ == "__main__":
-    app.run(debug=False, host='0.0.0.0', port=8050)
+    print("\nIniciando servidor local de Dash...")
+    print("Abre tu navegador en: http://127.0.0.1:8050/")
+    # Usando el método moderno compatible con tu versión de Dash
+    app.run(debug=True, port=8050)
