@@ -222,6 +222,5 @@ def actualizar_dashboard(pais_seleccionado, rango_meses):
 
 if __name__ == "__main__":
     print("\nIniciando servidor local de Dash...")
-    print("Abre tu navegador en: http://127.0.0.1:8050/")
-    # Usando el método moderno compatible con tu versión de Dash
-    app.run(debug=True, port=8050)
+    # host='0.0.0.0' le dice a Render que acepte conexiones externas en internet
+    app.run(debug=False, host='0.0.0.0', port=8050)
