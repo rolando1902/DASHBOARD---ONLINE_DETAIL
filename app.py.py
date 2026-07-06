@@ -221,6 +221,4 @@ def actualizar_dashboard(pais_seleccionado, rango_meses):
     return fig1, fig2, fig3, fig4
 
 if __name__ == "__main__":
-    print("\nIniciando servidor local de Dash...")
-    # host='0.0.0.0' le dice a Render que acepte conexiones externas en internet
     app.run(debug=False, host='0.0.0.0', port=8050)
