@@ -97,8 +97,8 @@ def generar_reportes_locales(df):
 # ==========================================
 
 # Ejecutar proceso inicial si no existe el archivo limpio
-if not os.path.exists(archivo_limpio):
-    backend()
+#if not os.path.exists(archivo_limpio):
+ #   backend()
 
 # Carga optimizada para el Dashboard
 df_raw = pd.read_csv(archivo_limpio)
